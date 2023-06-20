@@ -1,0 +1,154 @@
+.winners {
+	.tab {
+		&.active {
+			.btn {
+				cursor: default;
+				filter: none;
+				user-select: none;
+				&::before {
+					background: none;
+				}
+			}
+		}
+	}
+	.gradient-block {
+		position: relative;
+		margin-top: 200px;
+		@media screen and (max-width: 780px) {
+			margin-top: 110px;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: -209px;
+			height: 300px;
+			width: 100%;
+			background: url(../img/main-bg.svg) repeat-x bottom;
+			background-size: contain;
+
+			@media screen and (max-width: 780px) {
+				background-size: 495px;
+				top: -150px;
+				height: 185px;
+			}
+		}
+		.content {
+			background: linear-gradient(180deg, #ffb028 0%, #ff7400 100%);
+			box-shadow: 0px 14px 17px rgba(25, 51, 90, 0.1);
+			border-radius: 0px 0px 30px 30px;
+			position: relative;
+			min-height: 200px;
+			.slider-block {
+				position: relative;
+				&::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: -99px;
+					height: 100px;
+					width: 100%;
+					background: url(../img/fire-prizes-white.png) repeat-x bottom;
+					background-size: contain;
+				}
+				.content-inner {
+					position: relative;
+					border-radius: 0px 0px 25px 25px;
+					background: #f6fbff;
+					min-height: 100px;
+				}
+			}
+		}
+		.slick-list {
+			padding: 0 5rem;
+		}
+		.slick-arrow {
+			background: linear-gradient(92.94deg, #ff7400 0.21%, #ffb800 99.79%);
+			box-shadow: 0px 4px 0px #d86400;
+			border-radius: 15px;
+			width: 3rem;
+			height: 3rem;
+			&::before {
+				content: "";
+				background: url(../img/arrow-left.svg) no-repeat center;
+				background-size: contain;
+				width: 80%;
+				height: 80%;
+				left: 0;
+				right: 0;
+				top: 5%;
+				bottom: 0;
+				position: absolute;
+				margin: auto;
+			}
+			&.slick-next {
+				&::before {
+					transform: rotateY(180deg);
+				}
+			}
+		}
+		.slick-dots {
+			// background: rgba(255, 130, 0, 0.3);
+			// border-radius: 2px;
+			li {
+				width: 10px;
+				height: 10px;
+
+				button {
+					width: 100%;
+					height: 100%;
+					border-radius: 50%;
+					background: rgba(255, 130, 0, 0.3);
+					&::before {
+						display: none;
+					}
+				}
+				&.slick-active {
+					button {
+						background: $orange;
+					}
+				}
+			}
+		}
+	}
+	.tab {
+		@media screen and (max-width: 780px) {
+			width: 45%;
+			.btn {
+				text-align: center;
+				span {
+					font-size: 0.8rem;
+				}
+			}
+		}
+		&:not(:last-child) {
+			margin-right: 1rem;
+			@media screen and (max-width: 780px) {
+				// margin-right: 0;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+.winner {
+	&.special {
+		padding-left: 2rem;
+		color: $orange;
+		position: relative;
+		&::before {
+			position: absolute;
+			content: "";
+			left: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			background: url(../img/money.png) no-repeat center;
+			background-size: contain;
+			width: 2rem;
+			height: 2rem;
+			left: -0.5rem;
+		}
+	}
+}
